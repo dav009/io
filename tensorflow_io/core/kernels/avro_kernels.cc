@@ -356,6 +356,9 @@ class AvroReadable : public IOReadableInterface {
       case avro::AVRO_ENUM:
         dtype = DT_STRING;
         break;
+      case avro::AVRO_ARRAY:
+        dtype = DT_STRING;
+        break
       default:
         return errors::InvalidArgument("Avro type unsupported: ", field.type());
       }
